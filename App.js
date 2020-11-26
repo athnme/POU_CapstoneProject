@@ -93,6 +93,23 @@ const Placeholder = styled.Text`
   color: #cecece;
 `;
 
+// Buttons
+
+const BtnDefault = styled.TouchableOpacity`
+  max-width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 2px #cecece;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+`;
+
+const BtnCTA = styled(BtnDefault)`
+  border: none;
+  background: #33d17c;
+`;
+
 export default function App() {
   return (
     <Container>
@@ -109,6 +126,14 @@ export default function App() {
       <Caption>Caption</Caption>
       <CaptionBold>CabtionBold</CaptionBold>
       <Placeholder>Placeholder</Placeholder>
+
+      <BtnDefault>
+        <Placeholder>Default Button</Placeholder>
+      </BtnDefault>
+
+      <BtnCTA>
+        <Placeholder>CTA Button</Placeholder>
+      </BtnCTA>
     </Container>
   );
 }

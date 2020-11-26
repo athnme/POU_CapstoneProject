@@ -137,6 +137,46 @@ const LogoVertical = styled(IconDefault)`
   height: 175px;
 `;
 
+// Profile Pic
+
+const ProfilePicXL = styled.Image`
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: solid 2px #cecece;
+`;
+
+const ProfilePicXLActive = styled(ProfilePicXL)`
+  border-color: #33d17c;
+`;
+
+const ProfilePicL = styled(ProfilePicXL)`
+  width: 64px;
+  height: 64px;
+`;
+
+const ProfilePicLActive = styled(ProfilePicL)`
+  border-color: #33d17c;
+`;
+
+const ProfilePicM = styled(ProfilePicXL)`
+  width: 48px;
+  height: 48px;
+`;
+
+const ProfilePicMActive = styled(ProfilePicM)`
+  border-color: #33d17c;
+`;
+
+const ProfilePicS = styled(ProfilePicXL)`
+  width: 24px;
+  height: 24px;
+`;
+
+const ProfilePicSActive = styled(ProfilePicS)`
+  border-color: #33d17c;
+`;
+
 const Comps = styled.View`
   flex-direction: row;
   gap: 16px;
@@ -197,6 +237,18 @@ export default function App() {
 
         <LogoHorizontal source={require("./assets/Logo_Horizontal.svg")} />
         <LogoVertical source={require("./assets/Logo_Vertical.svg")} />
+      </Comps>
+
+      <Comps>
+        <ProfilePicXL source={require("./assets/Profile_Pic.jpg")} />
+        <ProfilePicL source={require("./assets/Profile_Pic.jpg")} />
+        <ProfilePicM source={require("./assets/Profile_Pic.jpg")} />
+        <ProfilePicS source={require("./assets/Profile_Pic.jpg")} />
+
+        <ProfilePicXLActive source={require("./assets/Profile_Pic.jpg")} />
+        <ProfilePicLActive source={require("./assets/Profile_Pic.jpg")} />
+        <ProfilePicMActive source={require("./assets/Profile_Pic.jpg")} />
+        <ProfilePicSActive source={require("./assets/Profile_Pic.jpg")} />
       </Comps>
     </Container>
   );

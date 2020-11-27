@@ -1,14 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  TextInput,
+} from "react-native";
 
 import styled from "styled-components/native";
 
-const Container = styled.View`
+const Container = styled.ScrollView`
   flex: 1;
   background-image: linear-gradient(180deg, #07211f 3.28%, #030d12 96.74%);
   row-gap: 16px;
-  padding: 16px;
   color: #cecece;
 `;
 
@@ -86,7 +92,7 @@ const Placeholder = styled(Paragraph)`
 // Buttons
 
 const BtnDefault = styled.TouchableOpacity`
-  max-width: 180px;
+  width: 100%;
   border-radius: 20px;
   border: solid 2px #cecece;
   align-items: center;
@@ -110,6 +116,14 @@ const ShadowCTA = styled.View`
   opacity: 0.84;
   position: absolute;
   top: 16px;
+`;
+
+const NavButton = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+  width: 20%;
+  max-width: 168px;
 `;
 
 // Icons
@@ -177,28 +191,51 @@ const ProfilePicSActive = styled(ProfilePicS)`
   border-color: #33d17c;
 `;
 
+// Input
+
+const TextField = styled.TextInput`
+  height: 40px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 40px;
+  background-color: #030d12;
+  color: rgba(206, 206, 206, 0.5);
+`;
+
+const BottomNavBar = styled.View`
+  height: 56px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+`;
+
 const Comps = styled.View`
   flex-direction: row;
   gap: 16px;
   flex-wrap: wrap;
+  margin: 40px 16px;
 `;
 
 export default function App() {
   return (
     <Container>
-      <StatusBar style="auto" />
+      <Comps>
+        <StatusBar style="auto" />
 
-      <HeaderOne>HeaderOne</HeaderOne>
-      <HeaderTwo>HeaderTwo</HeaderTwo>
-      <HeaderThree>HeaderThree</HeaderThree>
-      <HeaderFour>HeaderFour</HeaderFour>
-      <HeaderFive>HeaderFive</HeaderFive>
-      <HeaderSix>HeaderSix</HeaderSix>
-      <Paragraph>Paragraph</Paragraph>
-      <ParagraphBold>ParagraphBold</ParagraphBold>
-      <Caption>Caption</Caption>
-      <CaptionBold>CabtionBold</CaptionBold>
-      <Placeholder>Placeholder</Placeholder>
+        <HeaderOne>HeaderOne</HeaderOne>
+        <HeaderTwo>HeaderTwo</HeaderTwo>
+        <HeaderThree>HeaderThree</HeaderThree>
+        <HeaderFour>HeaderFour</HeaderFour>
+        <HeaderFive>HeaderFive</HeaderFive>
+        <HeaderSix>HeaderSix</HeaderSix>
+        <Paragraph>Paragraph</Paragraph>
+        <ParagraphBold>ParagraphBold</ParagraphBold>
+        <Caption>Caption</Caption>
+        <CaptionBold>CabtionBold</CaptionBold>
+        <Placeholder>Placeholder</Placeholder>
+      </Comps>
 
       <Comps>
         <BtnDefault>
@@ -208,6 +245,10 @@ export default function App() {
           <Placeholder>CTA Button</Placeholder>
           <ShadowCTA></ShadowCTA>
         </BtnCTA>
+      </Comps>
+
+      <Comps>
+        <TextField value={"Text Input"} />
       </Comps>
 
       <Comps>
@@ -250,6 +291,24 @@ export default function App() {
         <ProfilePicMActive source={require("./assets/Profile_Pic.jpg")} />
         <ProfilePicSActive source={require("./assets/Profile_Pic.jpg")} />
       </Comps>
+
+      <BottomNavBar>
+        <NavButton>
+          <IconDefault source={require("./assets/Home_Active.svg")} />
+        </NavButton>
+        <NavButton>
+          <IconDefault source={require("./assets/Like.svg")} />
+        </NavButton>
+        <NavButton>
+          <IconTall source={require("./assets/Add.svg")} />
+        </NavButton>
+        <NavButton>
+          <IconDefault source={require("./assets/Notification.svg")} />
+        </NavButton>
+        <NavButton>
+          <ProfilePicS source={require("./assets/Profile_Pic.jpg")} />
+        </NavButton>
+      </BottomNavBar>
     </Container>
   );
 }

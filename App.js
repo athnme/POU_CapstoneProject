@@ -11,11 +11,43 @@ import {
 
 import styled from "styled-components/native";
 
+// Import Icons
+import {
+  BackIcon,
+  CloseIcon,
+  HomeIcon,
+  LikeIcon,
+  IndicatorIcon,
+  MarkUserIcon,
+  NotificationIcon,
+  OptionsIcon,
+  SearchIcon,
+  Wordmark,
+  AddIcon,
+  LogoIcon,
+} from "./components/Icons";
+
+// Import Buttons
+import {
+  BackButton,
+  CloseButton,
+  HomeButton,
+  LikeButton,
+  MarkButton,
+  NotificationButton,
+  OptionsButton,
+  SearchButton,
+  AddButton,
+  DefaultButton,
+  CtaButton,
+} from "./components/Buttons";
+
 const Container = styled.ScrollView`
   flex: 1;
   background-image: linear-gradient(180deg, #07211f 3.28%, #030d12 96.74%);
   row-gap: 16px;
   color: #cecece;
+  padding: 16px;
 `;
 
 //Typography
@@ -89,35 +121,6 @@ const Placeholder = styled(Paragraph)`
   letter-spacing: 0.25px;
 `;
 
-// Buttons
-
-const BtnDefault = styled.TouchableOpacity`
-  width: 100%;
-  border-radius: 20px;
-  border: solid 2px #cecece;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 20px;
-  text-align: center;
-`;
-
-const BtnCTA = styled(BtnDefault)`
-  border: none;
-  color: #07211f;
-  background: #33d17c;
-`;
-
-const ShadowCTA = styled.View`
-  width: calc(100% - 32px);
-  height: calc(100% - 16px);
-  background: #33d17c;
-  filter: blur(16px);
-  z-index: -1;
-  opacity: 0.84;
-  position: absolute;
-  top: 16px;
-`;
-
 const NavButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
@@ -127,29 +130,6 @@ const NavButton = styled.TouchableOpacity`
 `;
 
 // Icons
-
-const IconDefault = styled.Image`
-  width: 24px;
-  height: 24px;
-`;
-
-const IconTall = styled(IconDefault)`
-  height: 32px;
-`;
-
-const LogoType = styled(IconDefault)`
-  width: 41px;
-`;
-
-const LogoHorizontal = styled(IconDefault)`
-  width: 264px;
-  height: 110px;
-`;
-
-const LogoVertical = styled(IconDefault)`
-  width: 100px;
-  height: 175px;
-`;
 
 // Profile Pic
 
@@ -202,28 +182,44 @@ const TextField = styled.TextInput`
   color: rgba(206, 206, 206, 0.5);
 `;
 
+// Bars
+
 const BottomNavBar = styled.View`
   height: 56px;
   width: 100%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: grey;
+  background-color: #030d12;
+  position: fixed;
+  bottom: 0;
+`;
+
+const TopNavBar = styled.View`
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 16px;
+  background-color: #000;
+  justify-content: center;
 `;
 
 const Comps = styled.View`
   flex-direction: row;
   gap: 16px;
   flex-wrap: wrap;
-  margin: 40px 16px;
+  margin: 16px 16px 40px;
 `;
 
 export default function App() {
   return (
     <Container>
-      <Comps>
-        <StatusBar style="auto" />
+      <StatusBar style="auto" />
 
+      <HeaderThree>TYPOGRAPHY --</HeaderThree>
+      <Comps>
         <HeaderOne>HeaderOne</HeaderOne>
         <HeaderTwo>HeaderTwo</HeaderTwo>
         <HeaderThree>HeaderThree</HeaderThree>
@@ -237,48 +233,42 @@ export default function App() {
         <Placeholder>Placeholder</Placeholder>
       </Comps>
 
+      <HeaderThree>ICONS --</HeaderThree>
       <Comps>
-        <BtnDefault>
-          <Placeholder>Default Button</Placeholder>
-        </BtnDefault>
-        <BtnCTA>
-          <Placeholder>CTA Button</Placeholder>
-          <ShadowCTA></ShadowCTA>
-        </BtnCTA>
+        <BackIcon />
+        <CloseIcon />
+        <HomeIcon />
+        <LikeIcon />
+        <IndicatorIcon />
+        <MarkUserIcon />
+        <NotificationIcon />
+        <OptionsIcon />
+        <SearchIcon />
+        <Wordmark />
+        <AddIcon />
+        <LogoIcon />
+      </Comps>
+
+      <HeaderThree>BUTTONS --</HeaderThree>
+      <Comps>
+        <DefaultButton />
+        <CtaButton />
+        <BackButton />
+        <CloseButton />
+        <HomeButton />
+        <LikeButton />
+        <MarkButton />
+        <NotificationButton />
+        <OptionsButton />
+        <SearchButton />
+        <AddButton />
       </Comps>
 
       <Comps>
         <TextField value={"Text Input"} />
       </Comps>
 
-      <Comps>
-        <IconDefault source={require("./assets/Back.svg")} />
-        <IconDefault source={require("./assets/Close.svg")} />
-        <IconDefault source={require("./assets/Home_Active.svg")} />
-        <IconDefault source={require("./assets/Home.svg")} />
-        <IconDefault source={require("./assets/Like_Active.svg")} />
-        <IconDefault source={require("./assets/Like_Liked.svg")} />
-        <IconDefault source={require("./assets/Like.svg")} />
-        <IconDefault source={require("./assets/Location_Indicator.svg")} />
-        <IconDefault source={require("./assets/Mark_User.svg")} />
-        <IconDefault
-          source={require("./assets/Notification_Active_Alert.svg")}
-        />
-        <IconDefault source={require("./assets/Notification_Active.svg")} />
-        <IconDefault source={require("./assets/Notification_Alert.svg")} />
-        <IconDefault source={require("./assets/Notification.svg")} />
-        <IconDefault source={require("./assets/Options.svg")} />
-        <IconDefault source={require("./assets/Search_Active.svg")} />
-        <IconDefault source={require("./assets/Search.svg")} />
-
-        <IconTall source={require("./assets/Add.svg")} />
-        <IconTall source={require("./assets/Logo_Icon.svg")} />
-
-        <LogoType source={require("./assets/LogoType.svg")} />
-
-        <LogoHorizontal source={require("./assets/Logo_Horizontal.svg")} />
-        <LogoVertical source={require("./assets/Logo_Vertical.svg")} />
-      </Comps>
+      <Comps></Comps>
 
       <Comps>
         <ProfilePicXL source={require("./assets/Profile_Pic.jpg")} />
@@ -292,23 +282,7 @@ export default function App() {
         <ProfilePicSActive source={require("./assets/Profile_Pic.jpg")} />
       </Comps>
 
-      <BottomNavBar>
-        <NavButton>
-          <IconDefault source={require("./assets/Home_Active.svg")} />
-        </NavButton>
-        <NavButton>
-          <IconDefault source={require("./assets/Like.svg")} />
-        </NavButton>
-        <NavButton>
-          <IconTall source={require("./assets/Add.svg")} />
-        </NavButton>
-        <NavButton>
-          <IconDefault source={require("./assets/Notification.svg")} />
-        </NavButton>
-        <NavButton>
-          <ProfilePicS source={require("./assets/Profile_Pic.jpg")} />
-        </NavButton>
-      </BottomNavBar>
+      <Comps></Comps>
     </Container>
   );
 }

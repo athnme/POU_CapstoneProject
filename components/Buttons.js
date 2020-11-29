@@ -22,6 +22,8 @@ import {
   AddIcon,
 } from "./Icons";
 
+import { ProfilePicS, ProfilePicXL } from "./ProfilePics";
+
 // Styles
 
 const BtnDefault = styled.TouchableOpacity`
@@ -131,6 +133,14 @@ export function AddButton() {
   return (
     <BtnIcon>
       <AddIcon />
+    </BtnIcon>
+  );
+}
+
+export function ProfileButton() {
+  return (
+    <BtnIcon>
+      <ProfilePicS />
     </BtnIcon>
   );
 }

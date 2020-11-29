@@ -27,6 +27,18 @@ import {
   LogoIcon,
 } from "./components/Icons";
 
+// Import ProfilePics
+import {
+  ProfilePicL,
+  ProfilePicL_Active,
+  ProfilePicM,
+  ProfilePicM_Active,
+  ProfilePicS,
+  ProfilePicS_Active,
+  ProfilePicXL,
+  ProfilePicXL_Active,
+} from "./components/ProfilePics";
+
 // Import Buttons
 import {
   BackButton,
@@ -40,7 +52,10 @@ import {
   AddButton,
   DefaultButton,
   CtaButton,
+  ProfileButton,
 } from "./components/Buttons";
+
+// -- Styles
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -121,56 +136,6 @@ const Placeholder = styled(Paragraph)`
   letter-spacing: 0.25px;
 `;
 
-const NavButton = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
-  padding: 0 12px;
-  width: 20%;
-  max-width: 168px;
-`;
-
-// Icons
-
-// Profile Pic
-
-const ProfilePicXL = styled.Image`
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: solid 2px #cecece;
-`;
-
-const ProfilePicXLActive = styled(ProfilePicXL)`
-  border-color: #33d17c;
-`;
-
-const ProfilePicL = styled(ProfilePicXL)`
-  width: 64px;
-  height: 64px;
-`;
-
-const ProfilePicLActive = styled(ProfilePicL)`
-  border-color: #33d17c;
-`;
-
-const ProfilePicM = styled(ProfilePicXL)`
-  width: 48px;
-  height: 48px;
-`;
-
-const ProfilePicMActive = styled(ProfilePicM)`
-  border-color: #33d17c;
-`;
-
-const ProfilePicS = styled(ProfilePicXL)`
-  width: 24px;
-  height: 24px;
-`;
-
-const ProfilePicSActive = styled(ProfilePicS)`
-  border-color: #33d17c;
-`;
-
 // Input
 
 const TextField = styled.TextInput`
@@ -180,30 +145,6 @@ const TextField = styled.TextInput`
   border-radius: 40px;
   background-color: #030d12;
   color: rgba(206, 206, 206, 0.5);
-`;
-
-// Bars
-
-const BottomNavBar = styled.View`
-  height: 56px;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #030d12;
-  position: fixed;
-  bottom: 0;
-`;
-
-const TopNavBar = styled.View`
-  height: 56px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 16px;
-  background-color: #000;
-  justify-content: center;
 `;
 
 const Comps = styled.View`
@@ -249,6 +190,18 @@ export default function App() {
         <LogoIcon />
       </Comps>
 
+      <HeaderThree>PROFILE PICS --</HeaderThree>
+      <Comps>
+        <ProfilePicXL />
+        <ProfilePicL />
+        <ProfilePicM />
+        <ProfilePicS />
+        <ProfilePicXL_Active />
+        <ProfilePicL_Active />
+        <ProfilePicM_Active />
+        <ProfilePicS_Active />
+      </Comps>
+
       <HeaderThree>BUTTONS --</HeaderThree>
       <Comps>
         <DefaultButton />
@@ -262,24 +215,11 @@ export default function App() {
         <OptionsButton />
         <SearchButton />
         <AddButton />
+        <ProfileButton />
       </Comps>
 
       <Comps>
         <TextField value={"Text Input"} />
-      </Comps>
-
-      <Comps></Comps>
-
-      <Comps>
-        <ProfilePicXL source={require("./assets/Profile_Pic.jpg")} />
-        <ProfilePicL source={require("./assets/Profile_Pic.jpg")} />
-        <ProfilePicM source={require("./assets/Profile_Pic.jpg")} />
-        <ProfilePicS source={require("./assets/Profile_Pic.jpg")} />
-
-        <ProfilePicXLActive source={require("./assets/Profile_Pic.jpg")} />
-        <ProfilePicLActive source={require("./assets/Profile_Pic.jpg")} />
-        <ProfilePicMActive source={require("./assets/Profile_Pic.jpg")} />
-        <ProfilePicSActive source={require("./assets/Profile_Pic.jpg")} />
       </Comps>
 
       <Comps></Comps>

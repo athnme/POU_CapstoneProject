@@ -19,9 +19,7 @@ import {
   NotificationIcon,
   OptionsIcon,
   SearchIcon,
-  Wordmark,
   AddIcon,
-  LogoIcon,
 } from "./Icons";
 
 // Styles
@@ -33,6 +31,7 @@ const BtnDefault = styled.TouchableOpacity`
   align-items: center;
   border-radius: 20px;
   width: 100%;
+  height: 40px;
   border: solid 2px #cecece;
   color: #cecece;
 `;
@@ -43,7 +42,7 @@ const BtnCta = styled(BtnDefault)`
   background: #33d17c;
 `;
 
-const btnIcon = styled.TouchableOpacity`
+const BtnIcon = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `;
@@ -66,72 +65,72 @@ export function CtaButton() {
 
 export function BackButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <BackIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function CloseButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <CloseIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function HomeButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <HomeIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function LikeButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <LikeIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function MarkButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <MarkUserIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function NotificationButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <NotificationIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function SearchButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <SearchIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function OptionsButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <OptionsIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
 
 export function AddButton() {
   return (
-    <btnIcon>
+    <BtnIcon>
       <AddIcon />
-    </btnIcon>
+    </BtnIcon>
   );
 }
